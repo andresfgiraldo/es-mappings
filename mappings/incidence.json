@@ -1,0 +1,192 @@
+{
+    "dynamic_templates": [],
+    "properties": {
+        "eventId": {
+            "type": "byte"
+        },
+        "metadata": {
+            "type": "object",
+            "properties": {
+                "file": {
+                    "type": "text"
+                },
+                "oldLocation": {
+                    "type": "object",
+                    "properties": {
+                        "instructions": {
+                            "type": "text"
+                        },
+                        "address": {
+                            "type": "text"
+                        },
+                        "originalAddress": {
+                            "type": "text"
+                        },
+                        "location": {
+                            "type": "geo_point"
+                        }
+                    }
+                },
+                "gap": {
+                    "type": "double"
+                },
+                "oldRecipient": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "text"
+                        },
+                        "phonenumber": {
+                            "type": "text"
+                        },
+                        "email": {
+                            "type": "text"
+                        }
+                    }
+                },
+                "newLocation": {
+                    "type": "object",
+                    "properties": {
+                        "instructions": {
+                            "type": "text"
+                        },
+                        "address": {
+                            "type": "text"
+                        },
+                        "originalAddress": {
+                            "type": "text"
+                        },
+                        "location": {
+                            "type": "geo_point"
+                        }
+                    }
+                },
+                "newRecipient": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "text"
+                        },
+                        "phonenumber": {
+                            "type": "text"
+                        },
+                        "email": {
+                            "type": "text"
+                        }
+                    }
+                }
+            }
+        },
+        "shipperId": {
+            "type": "keyword"
+        },
+        "level": {
+            "type": "keyword"
+        },
+        "author": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "text"
+                },
+                "phonenumber": {
+                    "type": "text"
+                },
+                "id": {
+                    "type": "keyword"
+                },
+                "type": {
+                    "type": "keyword"
+                },
+                "email": {
+                    "type": "text"
+                }
+            }
+        },
+        "solvedBy": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "text"
+                },
+                "phonenumber": {
+                    "type": "text"
+                },
+                "id": {
+                    "type": "keyword"
+                },
+                "type": {
+                    "type": "keyword"
+                },
+                "email": {
+                    "type": "text"
+                }
+            }
+        },
+        "automatic": {
+            "type": "boolean"
+        },
+        "cityId": {
+            "type": "keyword"
+        },
+        "eventType": {
+            "type": "keyword"
+        },
+        "incidenceId": {
+            "type": "keyword"
+        },
+        "solvedAt": {
+            "type": "date"
+        },
+        "transactionId": {
+            "type": "byte"
+        },
+        "incidenceTypeId": {
+            "type": "keyword"
+        },
+        "createdAt": {
+            "type": "date"
+        },
+        "companyId": {
+            "type": "keyword"
+        },
+        "deliveryId": {
+            "type": "keyword"
+        },
+        "solution": {
+            "type": "text"
+        },
+        "eventEntity": {
+            "type": "keyword"
+        },
+        "rejectedAt": {
+            "type": "date"
+        },
+        "scope": {
+            "type": "object",
+            "properties": {
+                "shipper": {
+                    "type": "boolean"
+                },
+                "client": {
+                    "type": "boolean"
+                },
+                "company": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "incidenceType": {
+            "type": "keyword"
+        },
+        "comment": {
+            "type": "text"
+        },
+        "state": {
+            "type": "keyword"
+        },
+        "id": {
+            "type": "byte"
+        }
+    }
+}

@@ -1,5 +1,20 @@
 {
+    "_routing": {
+        "required": false
+    },
+    "numeric_detection": false,
+    "dynamic_date_formats": [
+        "strict_date_optional_time",
+        "yyyy/MM/dd HH:mm:ss Z||yyyy/MM/dd Z"
+    ],
+    "_source": {
+        "excludes": [],
+        "includes": [],
+        "enabled": true
+    },
+    "dynamic": true,
     "dynamic_templates": [],
+    "date_detection": true,
     "properties": {
         "eventPayload": {
             "type": "object",
@@ -7,12 +22,12 @@
                 "incidence": {
                     "type": "object",
                     "properties": {
+                        "eventId": {
+                            "type": "byte"
+                        },
                         "metadata": {
                             "type": "object",
                             "properties": {
-                                "file": {
-                                    "type": "text"
-                                },
                                 "oldLocation": {
                                     "type": "object",
                                     "properties": {
@@ -80,6 +95,9 @@
                                 }
                             }
                         },
+                        "shipperId": {
+                            "type": "keyword"
+                        },
                         "level": {
                             "type": "keyword"
                         },
@@ -94,20 +112,6 @@
                                 },
                                 "email": {
                                     "type": "text"
-                                }
-                            }
-                        },
-                        "scope": {
-                            "type": "object",
-                            "properties": {
-                                "shipper": {
-                                    "type": "boolean"
-                                },
-                                "client": {
-                                    "type": "boolean"
-                                },
-                                "company": {
-                                    "type": "boolean"
                                 }
                             }
                         },
@@ -128,6 +132,62 @@
                                 }
                             }
                         },
+                        "automatic": {
+                            "type": "boolean"
+                        },
+                        "cityId": {
+                            "type": "keyword"
+                        },
+                        "type": {
+                            "type": "keyword"
+                        },
+                        "incidenceId": {
+                            "type": "keyword"
+                        },
+                        "solvedAt": {
+                            "type": "date"
+                        },
+                        "transactionId": {
+                            "type": "byte"
+                        },
+                        "incidenceTypeId": {
+                            "type": "keyword"
+                        },
+                        "createdAt": {
+                            "type": "date"
+                        },
+                        "deliveryId": {
+                            "type": "keyword"
+                        },
+                        "companyId": {
+                            "type": "keyword"
+                        },
+                        "solution": {
+                            "type": "text"
+                        },
+                        "rejectedAt": {
+                            "type": "date"
+                        },
+                        "eventEntity": {
+                            "type": "keyword"
+                        },
+                        "scope": {
+                            "type": "object",
+                            "properties": {
+                                "shipper": {
+                                    "type": "boolean"
+                                },
+                                "client": {
+                                    "type": "boolean"
+                                },
+                                "company": {
+                                    "type": "boolean"
+                                }
+                            }
+                        },
+                        "incidenceType": {
+                            "type": "keyword"
+                        },
                         "comment": {
                             "type": "text"
                         },
@@ -136,16 +196,13 @@
                         },
                         "state": {
                             "type": "keyword"
-                        },
-                        "creationDate": {
-                            "type": "date"
-                        },
-                        "type": {
-                            "type": "keyword"
                         }
                     }
                 }
             }
+        },
+        "incidenceId": {
+            "type": "keyword"
         }
     }
 }
