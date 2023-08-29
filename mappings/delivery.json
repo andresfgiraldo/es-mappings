@@ -160,9 +160,6 @@
                                 },
                                 "automationStatus": {
                                     "type": "keyword"
-                                },
-                                "automationHumanReadableName": {
-                                    "type": "text"
                                 }
                             }
                         },
@@ -243,6 +240,9 @@
                                 "billId": {
                                     "type": "keyword"
                                 },
+                                "currency": {
+                                    "type": "keyword"
+                                },
                                 "id": {
                                     "type": "keyword"
                                 },
@@ -269,6 +269,9 @@
                                 "endDate": {
                                     "type": "date"
                                 },
+                                "currency": {
+                                    "type": "keyword"
+                                },
                                 "id": {
                                     "type": "keyword"
                                 },
@@ -277,6 +280,9 @@
                                 },
                                 "status": {
                                     "type": "keyword"
+                                },
+                                "usdValue": {
+                                    "type": "double"
                                 }
                             }
                         },
@@ -397,14 +403,6 @@
                 "cityLang": {
                     "type": "keyword"
                 },
-                "routeRejection": {
-                    "type": "object",
-                    "properties": {
-                        "driverId": {
-                            "type": "keyword"
-                        }
-                    }
-                },
                 "countryName": {
                     "type": "text"
                 },
@@ -483,9 +481,6 @@
                 },
                 "courierDocumentId": {
                     "type": "keyword"
-                },
-                "statusUpdateDate": {
-                    "type": "date"
                 },
                 "pickingPlace": {
                     "type": "object",
@@ -612,6 +607,20 @@
                 "eventAuthor": {
                     "type": "object",
                     "properties": {
+                        "automation": {
+                            "type": "object",
+                            "properties": {
+                                "automationId": {
+                                    "type": "keyword"
+                                },
+                                "automationName": {
+                                    "type": "keyword"
+                                },
+                                "automationStatus": {
+                                    "type": "keyword"
+                                }
+                            }
+                        },
                         "method": {
                             "type": "text"
                         },
@@ -688,6 +697,9 @@
                 "DELIVERY_SHIPPER_CHANGED": {
                     "type": "date"
                 },
+                "INCIDENCE_DELETED": {
+                    "type": "date"
+                },
                 "DELIVERY_PAID": {
                     "type": "date"
                 },
@@ -709,6 +721,9 @@
                 "DELIVERY_CLIENT_OPENED_NOTIFICATION": {
                     "type": "date"
                 },
+                "INCIDENCE_CREATED": {
+                    "type": "date"
+                },
                 "DELIVERY_FEE_ADDED": {
                     "type": "date"
                 },
@@ -716,6 +731,12 @@
                     "type": "date"
                 },
                 "DELIVERY_CAPACITY_CHANGED": {
+                    "type": "date"
+                },
+                "INCIDENCE_CREATED_AND_SOLVED": {
+                    "type": "date"
+                },
+                "INCIDENCE_COMMENT_EDITED": {
                     "type": "date"
                 },
                 "DELIVERY_NOTIFICATION_EXT_WHATSAPP_OPENED": {
@@ -742,6 +763,9 @@
                 "DELIVERY_ASSIGNED": {
                     "type": "date"
                 },
+                "INCIDENCE_SOLVED": {
+                    "type": "date"
+                },
                 "DELIVERY_AUTOMATION_EXECUTED_FAILED": {
                     "type": "date"
                 },
@@ -755,9 +779,6 @@
                     "type": "date"
                 },
                 "DELIVERY_DISTANCE_UPDATED": {
-                    "type": "date"
-                },
-                "DELIVERY_SHIPER_PAID_REMOVED": {
                     "type": "date"
                 },
                 "DELIVERY_HOLD_IN_STORAGE": {
@@ -841,9 +862,6 @@
                 "DELIVERY_TYPE_CHANGED": {
                     "type": "date"
                 },
-                "DELIVERY_DROPOFF_DUE_DATE_UPDATED": {
-                    "type": "date"
-                },
                 "DELIVERY_DRIVER_BILL_REMOVED": {
                     "type": "date"
                 },
@@ -895,9 +913,6 @@
                 "DELIVERY_HOLD_BY_COURIER": {
                     "type": "date"
                 },
-                "DELIVERY_DELETED": {
-                    "type": "date"
-                },
                 "DELIVERY_CREATED_WITH_ERRORS": {
                     "type": "date"
                 },
@@ -922,13 +937,7 @@
                 "DELIVERY_RETURN_CREATED": {
                     "type": "date"
                 },
-                "DELIVERY_TOTAL_PACKAGE_PRICE_UPDATED": {
-                    "type": "date"
-                },
                 "DELIVERY_CONFIRMED_BY_SHIPPER": {
-                    "type": "date"
-                },
-                "DELIVERY_GOING_TO_DROPOFF": {
                     "type": "date"
                 },
                 "DELIVERY_NOTIFICATION_SENT_FAILED": {
@@ -938,6 +947,9 @@
                     "type": "date"
                 },
                 "DELIVERY_RETURN_IN_TRANSIT": {
+                    "type": "date"
+                },
+                "INCIDENCE_METADATA_ADDED": {
                     "type": "date"
                 },
                 "ROUTE_ARTIFICIAL_EVENT_UPDATED": {
@@ -975,6 +987,56 @@
         "incidences": {
             "type": "nested",
             "properties": {
+                "shipperId": {
+                    "type": "keyword"
+                },
+                "cityId": {
+                    "type": "long"
+                },
+                "incidenceId": {
+                    "type": "long"
+                },
+                "type": {
+                    "type": "keyword"
+                },
+                "createdAt": {
+                    "type": "date"
+                },
+                "deliveryId": {
+                    "type": "keyword"
+                },
+                "solution": {
+                    "type": "text"
+                },
+                "rejectedAt": {
+                    "type": "date"
+                },
+                "scope": {
+                    "type": "object",
+                    "properties": {
+                        "shipper": {
+                            "type": "boolean"
+                        },
+                        "client": {
+                            "type": "boolean"
+                        },
+                        "company": {
+                            "type": "boolean"
+                        }
+                    }
+                },
+                "incidenceType": {
+                    "type": "keyword"
+                },
+                "eventDescription": {
+                    "type": "text"
+                },
+                "state": {
+                    "type": "keyword"
+                },
+                "eventId": {
+                    "type": "byte"
+                },
                 "eventCreatedAt": {
                     "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss||yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
                     "type": "date"
@@ -996,52 +1058,29 @@
                         }
                     }
                 },
-                "cityId": {
-                    "type": "long"
+                "automatic": {
+                    "type": "boolean"
                 },
                 "eventType": {
                     "type": "keyword"
                 },
-                "incidenceId": {
-                    "type": "long"
-                },
-                "type": {
-                    "type": "keyword"
-                },
-                "createdAt": {
+                "solvedAt": {
                     "type": "date"
+                },
+                "transactionId": {
+                    "type": "byte"
+                },
+                "incidenceTypeId": {
+                    "type": "keyword"
                 },
                 "companyId": {
                     "type": "long"
                 },
-                "deliveryId": {
-                    "type": "keyword"
-                },
                 "eventEntity": {
                     "type": "keyword"
                 },
-                "scope": {
-                    "type": "object",
-                    "properties": {
-                        "shipper": {
-                            "type": "boolean"
-                        },
-                        "client": {
-                            "type": "boolean"
-                        },
-                        "company": {
-                            "type": "boolean"
-                        }
-                    }
-                },
-                "eventDescription": {
-                    "type": "text"
-                },
                 "comment": {
                     "type": "text"
-                },
-                "state": {
-                    "type": "keyword"
                 },
                 "eventAuthor": {
                     "type": "object",

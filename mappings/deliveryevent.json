@@ -1,20 +1,5 @@
 {
-    "_routing": {
-        "required": false
-    },
-    "numeric_detection": false,
-    "dynamic_date_formats": [
-        "strict_date_optional_time",
-        "yyyy/MM/dd HH:mm:ss Z||yyyy/MM/dd Z"
-    ],
-    "dynamic": true,
-    "_source": {
-        "excludes": [],
-        "includes": [],
-        "enabled": true
-    },
     "dynamic_templates": [],
-    "date_detection": true,
     "properties": {
         "arrivalDeliveryDate": {
             "type": "date"
@@ -26,7 +11,7 @@
             "type": "text"
         },
         "references": {
-            "type": "object",
+            "type": "nested",
             "properties": {
                 "dropoffCity": {
                     "type": "keyword"
@@ -129,6 +114,9 @@
         },
         "removedRouteId": {
             "type": "keyword"
+        },
+        "distanceCharged": {
+            "type": "double"
         },
         "eventPayload": {
             "type": "object",
@@ -244,10 +232,78 @@
                         "billId": {
                             "type": "keyword"
                         },
+                        "currency": {
+                            "type": "keyword"
+                        },
                         "id": {
                             "type": "keyword"
                         },
                         "status": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+                "incidence": {
+                    "type": "object",
+                    "properties": {
+                        "eventId": {
+                            "type": "keyword"
+                        },
+                        "shipperId": {
+                            "type": "keyword"
+                        },
+                        "level": {
+                            "type": "keyword"
+                        },
+                        "automatic": {
+                            "type": "boolean"
+                        },
+                        "cityId": {
+                            "type": "keyword"
+                        },
+                        "type": {
+                            "type": "keyword"
+                        },
+                        "incidenceId": {
+                            "type": "keyword"
+                        },
+                        "solvedAt": {
+                            "type": "date"
+                        },
+                        "transactionId": {
+                            "type": "byte"
+                        },
+                        "incidenceTypeId": {
+                            "type": "keyword"
+                        },
+                        "createdAt": {
+                            "type": "date"
+                        },
+                        "companyId": {
+                            "type": "keyword"
+                        },
+                        "deliveryId": {
+                            "type": "keyword"
+                        },
+                        "solution": {
+                            "type": "text"
+                        },
+                        "eventEntity": {
+                            "type": "keyword"
+                        },
+                        "rejectedAt": {
+                            "type": "date"
+                        },
+                        "incidenceType": {
+                            "type": "keyword"
+                        },
+                        "comment": {
+                            "type": "text"
+                        },
+                        "id": {
+                            "type": "keyword"
+                        },
+                        "state": {
                             "type": "keyword"
                         }
                     }
@@ -270,6 +326,9 @@
                         "endDate": {
                             "type": "date"
                         },
+                        "currency": {
+                            "type": "keyword"
+                        },
                         "id": {
                             "type": "keyword"
                         },
@@ -278,6 +337,9 @@
                         },
                         "status": {
                             "type": "keyword"
+                        },
+                        "usdValue": {
+                            "type": "double"
                         }
                     }
                 },
@@ -330,9 +392,6 @@
         },
         "shipperName": {
             "type": "text"
-        },
-        "distanceCharged": {
-            "type": "double"
         },
         "eventType": {
             "type": "keyword"
@@ -430,14 +489,6 @@
         "cityLang": {
             "type": "keyword"
         },
-        "routeRejection": {
-            "type": "object",
-            "properties": {
-                "driverId": {
-                    "type": "keyword"
-                }
-            }
-        },
         "countryName": {
             "type": "text"
         },
@@ -501,9 +552,6 @@
         },
         "courierDocumentId": {
             "type": "keyword"
-        },
-        "statusUpdateDate": {
-            "type": "date"
         },
         "pickingPlace": {
             "type": "object",
@@ -602,6 +650,20 @@
         "eventAuthor": {
             "type": "object",
             "properties": {
+                "automation": {
+                    "type": "object",
+                    "properties": {
+                        "automationId": {
+                            "type": "keyword"
+                        },
+                        "automationName": {
+                            "type": "keyword"
+                        },
+                        "automationStatus": {
+                            "type": "keyword"
+                        }
+                    }
+                },
                 "method": {
                     "type": "text"
                 },

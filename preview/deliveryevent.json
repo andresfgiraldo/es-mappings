@@ -1,15 +1,18 @@
 {
     "template": {
-        "settings": {},
+        "settings": {
+            "index": {
+                "routing": {
+                    "allocation": {
+                        "include": {
+                            "_tier_preference": "data_content"
+                        }
+                    }
+                }
+            }
+        },
         "mappings": {
-            "dynamic": "true",
-            "dynamic_date_formats": [
-                "strict_date_optional_time",
-                "yyyy/MM/dd HH:mm:ss Z||yyyy/MM/dd Z"
-            ],
             "dynamic_templates": [],
-            "date_detection": true,
-            "numeric_detection": false,
             "properties": {
                 "arrivalDeliveryDate": {
                     "type": "date"
@@ -146,6 +149,19 @@
                 },
                 "eventAuthor": {
                     "properties": {
+                        "automation": {
+                            "properties": {
+                                "automationId": {
+                                    "type": "keyword"
+                                },
+                                "automationName": {
+                                    "type": "keyword"
+                                },
+                                "automationStatus": {
+                                    "type": "keyword"
+                                }
+                            }
+                        },
                         "email": {
                             "type": "text",
                             "fields": {
@@ -243,6 +259,9 @@
                                 "companyId": {
                                     "type": "keyword"
                                 },
+                                "currency": {
+                                    "type": "keyword"
+                                },
                                 "date": {
                                     "type": "date"
                                 },
@@ -262,6 +281,9 @@
                                     "type": "keyword"
                                 },
                                 "total": {
+                                    "type": "double"
+                                },
+                                "usdValue": {
                                     "type": "double"
                                 }
                             }
@@ -313,6 +335,70 @@
                                 }
                             }
                         },
+                        "incidence": {
+                            "properties": {
+                                "automatic": {
+                                    "type": "boolean"
+                                },
+                                "cityId": {
+                                    "type": "keyword"
+                                },
+                                "comment": {
+                                    "type": "text"
+                                },
+                                "companyId": {
+                                    "type": "keyword"
+                                },
+                                "createdAt": {
+                                    "type": "date"
+                                },
+                                "deliveryId": {
+                                    "type": "keyword"
+                                },
+                                "eventEntity": {
+                                    "type": "keyword"
+                                },
+                                "eventId": {
+                                    "type": "keyword"
+                                },
+                                "id": {
+                                    "type": "keyword"
+                                },
+                                "incidenceId": {
+                                    "type": "keyword"
+                                },
+                                "incidenceType": {
+                                    "type": "keyword"
+                                },
+                                "incidenceTypeId": {
+                                    "type": "keyword"
+                                },
+                                "level": {
+                                    "type": "keyword"
+                                },
+                                "rejectedAt": {
+                                    "type": "date"
+                                },
+                                "shipperId": {
+                                    "type": "keyword"
+                                },
+                                "solution": {
+                                    "type": "text"
+                                },
+                                "solvedAt": {
+                                    "type": "date"
+                                },
+                                "state": {
+                                    "type": "keyword"
+                                },
+                                "transactionId": {
+                                    "type": "byte"
+                                },
+                                "type": {
+                                    "type": "keyword"
+                                }
+                            }
+                        },
                         "route": {
                             "properties": {
                                 "removedRouteId": {
@@ -333,6 +419,9 @@
                                     "type": "double"
                                 },
                                 "billId": {
+                                    "type": "keyword"
+                                },
+                                "currency": {
                                     "type": "keyword"
                                 },
                                 "date": {
@@ -516,6 +605,7 @@
                     "type": "keyword"
                 },
                 "references": {
+                    "type": "nested",
                     "properties": {
                         "dropoffCity": {
                             "type": "keyword"
@@ -536,13 +626,6 @@
                 },
                 "routeId": {
                     "type": "keyword"
-                },
-                "routeRejection": {
-                    "properties": {
-                        "driverId": {
-                            "type": "keyword"
-                        }
-                    }
                 },
                 "scheduledEndDeliveryDate": {
                     "type": "date"
@@ -586,9 +669,6 @@
                 },
                 "status": {
                     "type": "keyword"
-                },
-                "statusUpdateDate": {
-                    "type": "date"
                 },
                 "tags": {
                     "type": "nested",

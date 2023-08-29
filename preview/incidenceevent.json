@@ -1,15 +1,26 @@
 {
     "template": {
-        "settings": {},
+        "settings": {
+            "index": {
+                "routing": {
+                    "allocation": {
+                        "include": {
+                            "_tier_preference": "data_content"
+                        }
+                    }
+                }
+            }
+        },
         "mappings": {
+            "dynamic": "true",
+            "dynamic_date_formats": [
+                "strict_date_optional_time",
+                "yyyy/MM/dd HH:mm:ss Z||yyyy/MM/dd Z"
+            ],
             "dynamic_templates": [],
+            "date_detection": true,
+            "numeric_detection": false,
             "properties": {
-                "arrivalDeliveryDate": {
-                    "type": "date"
-                },
-                "arrivalPickupDate": {
-                    "type": "date"
-                },
                 "attempts": {
                     "type": "long"
                 },
@@ -74,9 +85,6 @@
                 "currencyCode": {
                     "type": "keyword"
                 },
-                "deliveryDueDate": {
-                    "type": "date"
-                },
                 "deliveryId": {
                     "type": "keyword"
                 },
@@ -102,9 +110,6 @@
                         }
                     }
                 },
-                "dueDate": {
-                    "type": "date"
-                },
                 "effectiveDeliveryDate": {
                     "type": "date"
                 },
@@ -119,33 +124,8 @@
                         "id": {
                             "type": "keyword"
                         },
-                        "location": {
-                            "properties": {
-                                "accuracy": {
-                                    "type": "float"
-                                },
-                                "latitude": {
-                                    "type": "float"
-                                },
-                                "longitude": {
-                                    "type": "float"
-                                },
-                                "problem": {
-                                    "type": "text"
-                                },
-                                "timestamp": {
-                                    "type": "date"
-                                }
-                            }
-                        },
-                        "method": {
-                            "type": "text"
-                        },
                         "name": {
                             "type": "text"
-                        },
-                        "timestamp": {
-                            "type": "date"
                         },
                         "type": {
                             "type": "keyword"
@@ -175,13 +155,40 @@
                                         }
                                     }
                                 },
+                                "automatic": {
+                                    "type": "boolean"
+                                },
+                                "cityId": {
+                                    "type": "keyword"
+                                },
                                 "comment": {
                                     "type": "text"
                                 },
-                                "creationDate": {
+                                "companyId": {
+                                    "type": "keyword"
+                                },
+                                "createdAt": {
                                     "type": "date"
                                 },
+                                "deliveryId": {
+                                    "type": "keyword"
+                                },
+                                "eventEntity": {
+                                    "type": "keyword"
+                                },
+                                "eventId": {
+                                    "type": "byte"
+                                },
                                 "id": {
+                                    "type": "keyword"
+                                },
+                                "incidenceId": {
+                                    "type": "keyword"
+                                },
+                                "incidenceType": {
+                                    "type": "keyword"
+                                },
+                                "incidenceTypeId": {
                                     "type": "keyword"
                                 },
                                 "level": {
@@ -189,9 +196,6 @@
                                 },
                                 "metadata": {
                                     "properties": {
-                                        "file": {
-                                            "type": "text"
-                                        },
                                         "gap": {
                                             "type": "double"
                                         },
@@ -255,6 +259,9 @@
                                         }
                                     }
                                 },
+                                "rejectedAt": {
+                                    "type": "date"
+                                },
                                 "scope": {
                                     "properties": {
                                         "client": {
@@ -267,6 +274,15 @@
                                             "type": "boolean"
                                         }
                                     }
+                                },
+                                "shipperId": {
+                                    "type": "keyword"
+                                },
+                                "solution": {
+                                    "type": "text"
+                                },
+                                "solvedAt": {
+                                    "type": "date"
                                 },
                                 "solvedBy": {
                                     "properties": {
@@ -286,6 +302,9 @@
                                 },
                                 "state": {
                                     "type": "keyword"
+                                },
+                                "transactionId": {
+                                    "type": "byte"
                                 },
                                 "type": {
                                     "type": "keyword"
@@ -315,6 +334,9 @@
                     }
                 },
                 "formulaId": {
+                    "type": "keyword"
+                },
+                "incidenceId": {
                     "type": "keyword"
                 },
                 "items": {
@@ -352,12 +374,6 @@
                 "itemsNumber": {
                     "type": "long"
                 },
-                "itemsPrice": {
-                    "type": "double"
-                },
-                "itemsWeight": {
-                    "type": "double"
-                },
                 "jobId": {
                     "type": "keyword"
                 },
@@ -388,9 +404,6 @@
                             "type": "text"
                         }
                     }
-                },
-                "pickupDueDate": {
-                    "type": "date"
                 },
                 "price": {
                     "type": "double"
@@ -470,9 +483,6 @@
                             "type": "text"
                         },
                         "id": {
-                            "type": "keyword"
-                        },
-                        "keyword": {
                             "type": "keyword"
                         },
                         "name": {
