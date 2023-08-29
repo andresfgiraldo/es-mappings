@@ -313,6 +313,70 @@
                                 }
                             }
                         },
+                        "incidence": {
+                            "properties": {
+                                "automatic": {
+                                    "type": "boolean"
+                                },
+                                "cityId": {
+                                    "type": "keyword"
+                                },
+                                "comment": {
+                                    "type": "text"
+                                },
+                                "companyId": {
+                                    "type": "keyword"
+                                },
+                                "createdAt": {
+                                    "type": "date"
+                                },
+                                "deliveryId": {
+                                    "type": "keyword"
+                                },
+                                "eventEntity": {
+                                    "type": "keyword"
+                                },
+                                "eventId": {
+                                    "type": "keyword"
+                                },
+                                "id": {
+                                    "type": "keyword"
+                                },
+                                "incidenceId": {
+                                    "type": "keyword"
+                                },
+                                "incidenceType": {
+                                    "type": "keyword"
+                                },
+                                "incidenceTypeId": {
+                                    "type": "keyword"
+                                },
+                                "level": {
+                                    "type": "keyword"
+                                },
+                                "rejectedAt": {
+                                    "type": "date"
+                                },
+                                "shipperId": {
+                                    "type": "keyword"
+                                },
+                                "solution": {
+                                    "type": "text"
+                                },
+                                "solvedAt": {
+                                    "type": "date"
+                                },
+                                "state": {
+                                    "type": "keyword"
+                                },
+                                "transactionId": {
+                                    "type": "byte"
+                                },
+                                "type": {
+                                    "type": "keyword"
+                                }
+                            }
+                        },
                         "route": {
                             "properties": {
                                 "removedRouteId": {

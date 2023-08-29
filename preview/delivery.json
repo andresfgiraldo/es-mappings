@@ -671,6 +671,9 @@
                                 }
                             }
                         },
+                        "automatic": {
+                            "type": "boolean"
+                        },
                         "cityId": {
                             "type": "long"
                         },
@@ -706,14 +709,26 @@
                         "eventEntity": {
                             "type": "keyword"
                         },
+                        "eventId": {
+                            "type": "byte"
+                        },
                         "eventType": {
                             "type": "keyword"
                         },
                         "incidenceId": {
                             "type": "long"
                         },
+                        "incidenceType": {
+                            "type": "keyword"
+                        },
+                        "incidenceTypeId": {
+                            "type": "keyword"
+                        },
                         "level": {
                             "type": "keyword"
+                        },
+                        "rejectedAt": {
+                            "type": "date"
                         },
                         "scope": {
                             "properties": {
@@ -728,8 +743,20 @@
                                 }
                             }
                         },
+                        "shipperId": {
+                            "type": "keyword"
+                        },
+                        "solution": {
+                            "type": "text"
+                        },
+                        "solvedAt": {
+                            "type": "date"
+                        },
                         "state": {
                             "type": "keyword"
+                        },
+                        "transactionId": {
+                            "type": "byte"
                         },
                         "type": {
                             "type": "keyword"
@@ -1028,6 +1055,24 @@
                             "type": "date"
                         },
                         "ROUTE_ARTIFICIAL_EVENT_UPDATED": {
+                            "type": "date"
+                        },
+                        "INCIDENCE_COMMENT_EDITED": {
+                            "type": "date"
+                        },
+                        "INCIDENCE_CREATED": {
+                            "type": "date"
+                        },
+                        "INCIDENCE_CREATED_AND_SOLVED": {
+                            "type": "date"
+                        },
+                        "INCIDENCE_DELETED": {
+                            "type": "date"
+                        },
+                        "INCIDENCE_METADATA_ADDED": {
+                            "type": "date"
+                        },
+                        "INCIDENCE_SOLVED": {
                             "type": "date"
                         }
                     }
