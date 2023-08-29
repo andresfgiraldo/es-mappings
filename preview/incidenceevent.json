@@ -175,13 +175,40 @@
                                         }
                                     }
                                 },
+                                "automatic": {
+                                    "type": "boolean"
+                                },
+                                "cityId": {
+                                    "type": "keyword"
+                                },
                                 "comment": {
                                     "type": "text"
                                 },
-                                "creationDate": {
+                                "companyId": {
+                                    "type": "keyword"
+                                },
+                                "createdAt": {
                                     "type": "date"
                                 },
+                                "deliveryId": {
+                                    "type": "keyword"
+                                },
+                                "eventEntity": {
+                                    "type": "keyword"
+                                },
+                                "eventId": {
+                                    "type": "byte"
+                                },
                                 "id": {
+                                    "type": "keyword"
+                                },
+                                "incidenceId": {
+                                    "type": "keyword"
+                                },
+                                "incidenceType": {
+                                    "type": "keyword"
+                                },
+                                "incidenceTypeId": {
                                     "type": "keyword"
                                 },
                                 "level": {
@@ -189,9 +216,6 @@
                                 },
                                 "metadata": {
                                     "properties": {
-                                        "file": {
-                                            "type": "text"
-                                        },
                                         "gap": {
                                             "type": "double"
                                         },
@@ -255,6 +279,9 @@
                                         }
                                     }
                                 },
+                                "rejectedAt": {
+                                    "type": "date"
+                                },
                                 "scope": {
                                     "properties": {
                                         "client": {
@@ -267,6 +294,15 @@
                                             "type": "boolean"
                                         }
                                     }
+                                },
+                                "shipperId": {
+                                    "type": "keyword"
+                                },
+                                "solution": {
+                                    "type": "text"
+                                },
+                                "solvedAt": {
+                                    "type": "date"
                                 },
                                 "solvedBy": {
                                     "properties": {
@@ -286,6 +322,9 @@
                                 },
                                 "state": {
                                     "type": "keyword"
+                                },
+                                "transactionId": {
+                                    "type": "byte"
                                 },
                                 "type": {
                                     "type": "keyword"

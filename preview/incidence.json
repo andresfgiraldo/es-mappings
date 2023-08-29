@@ -1,0 +1,202 @@
+{
+    "template": {
+        "settings": {
+            "index": {
+                "routing": {
+                    "allocation": {
+                        "include": {
+                            "_tier_preference": "data_content"
+                        }
+                    }
+                }
+            }
+        },
+        "mappings": {
+            "dynamic_templates": [],
+            "properties": {
+                "author": {
+                    "properties": {
+                        "email": {
+                            "type": "text"
+                        },
+                        "id": {
+                            "type": "keyword"
+                        },
+                        "name": {
+                            "type": "text"
+                        },
+                        "phonenumber": {
+                            "type": "text"
+                        },
+                        "type": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+                "automatic": {
+                    "type": "boolean"
+                },
+                "cityId": {
+                    "type": "keyword"
+                },
+                "comment": {
+                    "type": "text"
+                },
+                "companyId": {
+                    "type": "keyword"
+                },
+                "createdAt": {
+                    "type": "date"
+                },
+                "deliveryId": {
+                    "type": "keyword"
+                },
+                "eventEntity": {
+                    "type": "keyword"
+                },
+                "eventId": {
+                    "type": "byte"
+                },
+                "eventType": {
+                    "type": "keyword"
+                },
+                "id": {
+                    "type": "byte"
+                },
+                "incidenceId": {
+                    "type": "keyword"
+                },
+                "incidenceType": {
+                    "type": "keyword"
+                },
+                "incidenceTypeId": {
+                    "type": "keyword"
+                },
+                "level": {
+                    "type": "keyword"
+                },
+                "metadata": {
+                    "properties": {
+                        "file": {
+                            "type": "text"
+                        },
+                        "gap": {
+                            "type": "double"
+                        },
+                        "newLocation": {
+                            "properties": {
+                                "address": {
+                                    "type": "text"
+                                },
+                                "instructions": {
+                                    "type": "text"
+                                },
+                                "location": {
+                                    "type": "geo_point"
+                                },
+                                "originalAddress": {
+                                    "type": "text"
+                                }
+                            }
+                        },
+                        "newRecipient": {
+                            "properties": {
+                                "email": {
+                                    "type": "text"
+                                },
+                                "name": {
+                                    "type": "text"
+                                },
+                                "phonenumber": {
+                                    "type": "text"
+                                }
+                            }
+                        },
+                        "oldLocation": {
+                            "properties": {
+                                "address": {
+                                    "type": "text"
+                                },
+                                "instructions": {
+                                    "type": "text"
+                                },
+                                "location": {
+                                    "type": "geo_point"
+                                },
+                                "originalAddress": {
+                                    "type": "text"
+                                }
+                            }
+                        },
+                        "oldRecipient": {
+                            "properties": {
+                                "email": {
+                                    "type": "text"
+                                },
+                                "name": {
+                                    "type": "text"
+                                },
+                                "phonenumber": {
+                                    "type": "text"
+                                }
+                            }
+                        }
+                    }
+                },
+                "rejectedAt": {
+                    "type": "date"
+                },
+                "scope": {
+                    "properties": {
+                        "client": {
+                            "type": "boolean"
+                        },
+                        "company": {
+                            "type": "boolean"
+                        },
+                        "shipper": {
+                            "type": "boolean"
+                        }
+                    }
+                },
+                "shipperId": {
+                    "type": "keyword"
+                },
+                "solution": {
+                    "type": "text"
+                },
+                "solvedAt": {
+                    "type": "date"
+                },
+                "solvedBy": {
+                    "properties": {
+                        "email": {
+                            "type": "text"
+                        },
+                        "id": {
+                            "type": "keyword"
+                        },
+                        "name": {
+                            "type": "text"
+                        },
+                        "phonenumber": {
+                            "type": "text"
+                        },
+                        "type": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+                "state": {
+                    "type": "keyword"
+                },
+                "transactionId": {
+                    "type": "byte"
+                }
+            }
+        },
+        "aliases": {
+            "incidence": {}
+        }
+    }
+}
