@@ -1,0 +1,1060 @@
+{
+    "dynamic_templates": [],
+    "properties": {
+        "delivery": {
+            "type": "object",
+            "properties": {
+                "arrivalDeliveryDate": {
+                    "type": "date"
+                },
+                "insurance": {
+                    "type": "double"
+                },
+                "notes": {
+                    "type": "text"
+                },
+                "references": {
+                    "type": "nested",
+                    "properties": {
+                        "dropoffCity": {
+                            "type": "keyword"
+                        },
+                        "groupId": {
+                            "type": "keyword"
+                        },
+                        "warehouseLocationId": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+                "extraData": {
+                    "type": "nested",
+                    "properties": {
+                        "name": {
+                            "type": "keyword"
+                        },
+                        "content": {
+                            "type": "keyword"
+                        },
+                        "searchable": {
+                            "type": "boolean"
+                        }
+                    }
+                },
+                "companyName": {
+                    "type": "text"
+                },
+                "dueDate": {
+                    "type": "date"
+                },
+                "networkName": {
+                    "type": "text"
+                },
+                "cityId": {
+                    "type": "keyword"
+                },
+                "distanceRoute": {
+                    "type": "double"
+                },
+                "type": {
+                    "type": "keyword"
+                },
+                "deliveryDueDate": {
+                    "type": "date"
+                },
+                "droppingPlace": {
+                    "type": "object",
+                    "properties": {
+                        "instructions": {
+                            "type": "text"
+                        },
+                        "address": {
+                            "type": "text",
+                            "fields": {
+                                "keyword": {
+                                    "type": "keyword"
+                                }
+                            }
+                        },
+                        "originalAddress": {
+                            "type": "text"
+                        },
+                        "location": {
+                            "type": "geo_point"
+                        }
+                    }
+                },
+                "scheduledStartPickingDate": {
+                    "type": "date"
+                },
+                "deliveryId": {
+                    "type": "keyword"
+                },
+                "price": {
+                    "type": "double"
+                },
+                "scheduledEndPickingDate": {
+                    "type": "date"
+                },
+                "eventDescription": {
+                    "type": "text"
+                },
+                "networkId": {
+                    "type": "keyword"
+                },
+                "state": {
+                    "type": "keyword"
+                },
+                "cash": {
+                    "type": "double"
+                },
+                "shipperEmail": {
+                    "type": "text"
+                },
+                "attempts": {
+                    "type": "long"
+                },
+                "eventId": {
+                    "type": "keyword"
+                },
+                "offset": {
+                    "type": "keyword"
+                },
+                "removedRouteId": {
+                    "type": "keyword"
+                },
+                "distanceCharged": {
+                    "type": "double"
+                },
+                "eventPayload": {
+                    "type": "object",
+                    "properties": {
+                        "artificial": {
+                            "type": "object",
+                            "properties": {
+                                "originalEventId": {
+                                    "type": "keyword"
+                                },
+                                "artificialEntityId": {
+                                    "type": "keyword"
+                                },
+                                "artificialEventId": {
+                                    "type": "keyword"
+                                },
+                                "originalEventType": {
+                                    "type": "keyword"
+                                },
+                                "artificialCreatedAt": {
+                                    "type": "date"
+                                }
+                            }
+                        },
+                        "automation": {
+                            "type": "object",
+                            "properties": {
+                                "automationId": {
+                                    "type": "keyword"
+                                },
+                                "automationName": {
+                                    "type": "keyword"
+                                },
+                                "automationStatus": {
+                                    "type": "keyword"
+                                },
+                                "automationHumanReadableName": {
+                                    "type": "text"
+                                }
+                            }
+                        },
+                        "file": {
+                            "type": "object",
+                            "properties": {
+                                "extension": {
+                                    "type": "keyword"
+                                },
+                                "name": {
+                                    "type": "text"
+                                },
+                                "id": {
+                                    "type": "keyword"
+                                },
+                                "creationDate": {
+                                    "type": "date"
+                                },
+                                "type": {
+                                    "type": "keyword"
+                                },
+                                "url": {
+                                    "type": "text"
+                                },
+                                "tags": {
+                                    "type": "text"
+                                }
+                            }
+                        },
+                        "route": {
+                            "type": "object",
+                            "properties": {
+                                "removedRouteId": {
+                                    "type": "keyword"
+                                }
+                            }
+                        },
+                        "fee": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "text"
+                                },
+                                "finalPrice": {
+                                    "type": "double"
+                                },
+                                "id": {
+                                    "type": "keyword"
+                                },
+                                "creationDate": {
+                                    "type": "date"
+                                },
+                                "type": {
+                                    "type": "keyword"
+                                },
+                                "value": {
+                                    "type": "double"
+                                }
+                            }
+                        },
+                        "routeRejection": {
+                            "type": "object",
+                            "properties": {
+                                "driverId": {
+                                    "type": "keyword"
+                                }
+                            }
+                        },
+                        "shipperBill": {
+                            "type": "object",
+                            "properties": {
+                                "date": {
+                                    "type": "date"
+                                },
+                                "amount": {
+                                    "type": "double"
+                                },
+                                "billId": {
+                                    "type": "keyword"
+                                },
+                                "id": {
+                                    "type": "keyword"
+                                },
+                                "status": {
+                                    "type": "keyword"
+                                }
+                            }
+                        },
+                        "companyBill": {
+                            "type": "object",
+                            "properties": {
+                                "date": {
+                                    "type": "date"
+                                },
+                                "companyId": {
+                                    "type": "keyword"
+                                },
+                                "period": {
+                                    "type": "keyword"
+                                },
+                                "total": {
+                                    "type": "double"
+                                },
+                                "endDate": {
+                                    "type": "date"
+                                },
+                                "id": {
+                                    "type": "keyword"
+                                },
+                                "startDate": {
+                                    "type": "date"
+                                },
+                                "status": {
+                                    "type": "keyword"
+                                }
+                            }
+                        },
+                        "tags": {
+                            "type": "object",
+                            "properties": {
+                                "removed": {
+                                    "type": "nested",
+                                    "properties": {
+                                        "color": {
+                                            "type": "keyword"
+                                        },
+                                        "name": {
+                                            "type": "text"
+                                        },
+                                        "description": {
+                                            "type": "text"
+                                        },
+                                        "company": {
+                                            "type": "keyword"
+                                        },
+                                        "id": {
+                                            "type": "keyword"
+                                        }
+                                    }
+                                },
+                                "added": {
+                                    "type": "nested",
+                                    "properties": {
+                                        "color": {
+                                            "type": "keyword"
+                                        },
+                                        "name": {
+                                            "type": "text"
+                                        },
+                                        "description": {
+                                            "type": "text"
+                                        },
+                                        "company": {
+                                            "type": "keyword"
+                                        },
+                                        "id": {
+                                            "type": "keyword"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "shipperName": {
+                    "type": "text"
+                },
+                "eventType": {
+                    "type": "keyword"
+                },
+                "creationDate": {
+                    "type": "date"
+                },
+                "offsetL": {
+                    "type": "long"
+                },
+                "tags": {
+                    "type": "nested",
+                    "properties": {
+                        "color": {
+                            "type": "keyword"
+                        },
+                        "name": {
+                            "type": "text"
+                        },
+                        "description": {
+                            "type": "text"
+                        },
+                        "company": {
+                            "type": "keyword"
+                        },
+                        "id": {
+                            "type": "keyword"
+                        },
+                        "keyword": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+                "itemsPrice": {
+                    "type": "double"
+                },
+                "formulaId": {
+                    "type": "keyword"
+                },
+                "jobId": {
+                    "type": "keyword"
+                },
+                "companyId": {
+                    "type": "keyword"
+                },
+                "size": {
+                    "type": "long"
+                },
+                "courier": {
+                    "type": "object",
+                    "properties": {
+                        "location": {
+                            "type": "geo_point"
+                        },
+                        "id": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+                "eventEntity": {
+                    "type": "keyword"
+                },
+                "itemsNumber": {
+                    "type": "long"
+                },
+                "cityLang": {
+                    "type": "keyword"
+                },
+                "routeRejection": {
+                    "type": "object",
+                    "properties": {
+                        "driverId": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+                "countryName": {
+                    "type": "text"
+                },
+                "recipientInfo": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "text",
+                            "fields": {
+                                "keyword": {
+                                    "type": "keyword"
+                                }
+                            }
+                        },
+                        "phonenumber": {
+                            "type": "text",
+                            "fields": {
+                                "keyword": {
+                                    "type": "keyword"
+                                }
+                            }
+                        },
+                        "email": {
+                            "type": "text",
+                            "fields": {
+                                "keyword": {
+                                    "type": "keyword"
+                                }
+                            }
+                        }
+                    }
+                },
+                "items": {
+                    "type": "nested",
+                    "properties": {
+                        "size": {
+                            "type": "long"
+                        },
+                        "price": {
+                            "type": "double"
+                        },
+                        "qty": {
+                            "type": "long"
+                        },
+                        "name": {
+                            "type": "text"
+                        },
+                        "weight": {
+                            "type": "long"
+                        },
+                        "delivered": {
+                            "type": "boolean"
+                        },
+                        "fragile": {
+                            "type": "boolean"
+                        },
+                        "id": {
+                            "type": "keyword"
+                        },
+                        "pickedUp": {
+                            "type": "boolean"
+                        }
+                    }
+                },
+                "pickupDueDate": {
+                    "type": "date"
+                },
+                "status": {
+                    "type": "keyword"
+                },
+                "shipperId": {
+                    "type": "keyword"
+                },
+                "distance": {
+                    "type": "double"
+                },
+                "courierDocumentId": {
+                    "type": "keyword"
+                },
+                "statusUpdateDate": {
+                    "type": "date"
+                },
+                "pickingPlace": {
+                    "type": "object",
+                    "properties": {
+                        "instructions": {
+                            "type": "text"
+                        },
+                        "address": {
+                            "type": "text",
+                            "fields": {
+                                "keyword": {
+                                    "type": "keyword"
+                                }
+                            }
+                        },
+                        "originalAddress": {
+                            "type": "text"
+                        },
+                        "location": {
+                            "type": "geo_point"
+                        }
+                    }
+                },
+                "referenceId": {
+                    "type": "keyword"
+                },
+                "itemsWeight": {
+                    "type": "double"
+                },
+                "routeId": {
+                    "type": "keyword"
+                },
+                "blocked": {
+                    "type": "boolean"
+                },
+                "cityName": {
+                    "type": "text"
+                },
+                "countryCode": {
+                    "type": "keyword"
+                },
+                "arrivalPickupDate": {
+                    "type": "date"
+                },
+                "routeCapacity": {
+                    "type": "long"
+                },
+                "effectivePickupDate": {
+                    "type": "date"
+                },
+                "eventTimestamp": {
+                    "type": "date"
+                },
+                "cost": {
+                    "type": "double"
+                },
+                "companyType": {
+                    "type": "keyword"
+                },
+                "scheduledEndDeliveryDate": {
+                    "type": "date"
+                },
+                "effectiveDeliveryDate": {
+                    "type": "date"
+                },
+                "scheduledStartDeliveryDate": {
+                    "type": "date"
+                },
+                "companyMode": {
+                    "type": "keyword"
+                },
+                "companyPlanType": {
+                    "type": "keyword"
+                },
+                "vehicleCapacity": {
+                    "type": "long"
+                },
+                "isArtificialEvent": {
+                    "type": "keyword"
+                },
+                "senderInfo": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "text",
+                            "fields": {
+                                "keyword": {
+                                    "type": "keyword"
+                                }
+                            }
+                        },
+                        "phonenumber": {
+                            "type": "text",
+                            "fields": {
+                                "keyword": {
+                                    "type": "keyword"
+                                }
+                            }
+                        },
+                        "email": {
+                            "type": "text",
+                            "fields": {
+                                "keyword": {
+                                    "type": "keyword"
+                                }
+                            }
+                        }
+                    }
+                },
+                "companyParentId": {
+                    "type": "keyword"
+                },
+                "kafkaOffset": {
+                    "coerce": true,
+                    "index": true,
+                    "ignore_malformed": false,
+                    "store": false,
+                    "type": "long",
+                    "doc_values": true
+                },
+                "currencyCode": {
+                    "type": "keyword"
+                },
+                "eventAuthor": {
+                    "type": "object",
+                    "properties": {
+                        "method": {
+                            "type": "text"
+                        },
+                        "name": {
+                            "type": "text"
+                        },
+                        "location": {
+                            "type": "object",
+                            "properties": {
+                                "problem": {
+                                    "type": "text"
+                                },
+                                "latitude": {
+                                    "type": "float"
+                                },
+                                "accuracy": {
+                                    "type": "float"
+                                },
+                                "longitude": {
+                                    "type": "float"
+                                },
+                                "timestamp": {
+                                    "type": "date"
+                                }
+                            }
+                        },
+                        "id": {
+                            "type": "keyword"
+                        },
+                        "type": {
+                            "type": "keyword"
+                        },
+                        "email": {
+                            "type": "text"
+                        },
+                        "timestamp": {
+                            "type": "date"
+                        }
+                    }
+                }
+            }
+        },
+        "attemptReasons": {
+            "type": "nested",
+            "properties": {
+                "reason": {
+                    "type": "keyword"
+                },
+                "comment": {
+                    "type": "text"
+                },
+                "id": {
+                    "type": "keyword"
+                },
+                "type": {
+                    "type": "keyword"
+                },
+                "timestamp": {
+                    "type": "date"
+                }
+            }
+        },
+        "lastEventsTimestamp": {
+            "dynamic": "strict",
+            "type": "object",
+            "enabled": true,
+            "properties": {
+                "DELIVERY_COST_CHANGED": {
+                    "type": "date"
+                },
+                "DELIVERY_GOING_TO_RETURN": {
+                    "type": "date"
+                },
+                "DELIVERY_SHIPPER_CHANGED": {
+                    "type": "date"
+                },
+                "DELIVERY_PAID": {
+                    "type": "date"
+                },
+                "DELIVERY_NOTIFICATION_SENT": {
+                    "type": "date"
+                },
+                "DELIVERY_PENDING_TO_REVIEW": {
+                    "type": "date"
+                },
+                "DELIVERY_EXTRA_DATA_CREATED": {
+                    "type": "date"
+                },
+                "DELIVERY_PACKAGE_REMOVED": {
+                    "type": "date"
+                },
+                "DELIVERY_REJECTED_BY_COURIER": {
+                    "type": "date"
+                },
+                "DELIVERY_CLIENT_OPENED_NOTIFICATION": {
+                    "type": "date"
+                },
+                "DELIVERY_FEE_ADDED": {
+                    "type": "date"
+                },
+                "DELIVERY_NOTIFICATION_EXT_WHATSAPP_FAILED": {
+                    "type": "date"
+                },
+                "DELIVERY_CAPACITY_CHANGED": {
+                    "type": "date"
+                },
+                "DELIVERY_NOTIFICATION_EXT_WHATSAPP_OPENED": {
+                    "type": "date"
+                },
+                "DELIVERY_NOTIFICATION_EXT_EMAIL_SENT": {
+                    "type": "date"
+                },
+                "DELIVERY_COMPANY_BILL_CREATED": {
+                    "type": "date"
+                },
+                "DELIVERY_SENDER_UPDATED": {
+                    "type": "date"
+                },
+                "DELIVERY_DISTANCE_CHARGED_UPDATED": {
+                    "type": "date"
+                },
+                "DELIVERY_UNLOCKED": {
+                    "type": "date"
+                },
+                "DELIVERY_BILLED": {
+                    "type": "date"
+                },
+                "DELIVERY_ASSIGNED": {
+                    "type": "date"
+                },
+                "DELIVERY_AUTOMATION_EXECUTED_FAILED": {
+                    "type": "date"
+                },
+                "DELIVERY_BILL_ROLLBACK": {
+                    "type": "date"
+                },
+                "DELIVERY_PAID_ROLLBACK": {
+                    "type": "date"
+                },
+                "DELIVERY_AT_PICKUP": {
+                    "type": "date"
+                },
+                "DELIVERY_DISTANCE_UPDATED": {
+                    "type": "date"
+                },
+                "DELIVERY_SHIPER_PAID_REMOVED": {
+                    "type": "date"
+                },
+                "DELIVERY_HOLD_IN_STORAGE": {
+                    "type": "date"
+                },
+                "DELIVERY_ADDRESS_UPDATED": {
+                    "type": "date"
+                },
+                "DELIVERY_CREATED_FIXED": {
+                    "type": "date"
+                },
+                "DELIVERY_REMOVED_FROM_ROUTE": {
+                    "type": "date"
+                },
+                "DELIVERY_ATTEMPTED": {
+                    "type": "date"
+                },
+                "DELIVERY_TAG_UPDATED": {
+                    "type": "date"
+                },
+                "DELIVERY_AT_RETURN_POINT": {
+                    "type": "date"
+                },
+                "DELIVERY_DOPOFF_DUE_DATE_UPDATED": {
+                    "type": "date"
+                },
+                "DELIVERY_RECIPIENT_UPDATED": {
+                    "type": "date"
+                },
+                "ROUTE_ARTIFICIAL_EVENT_CREATED": {
+                    "type": "date"
+                },
+                "DELIVERY_NOTIFICATION_EXT_SMS_FAILED": {
+                    "type": "date"
+                },
+                "DELIVERY_ADDED_IN_ROUTE": {
+                    "type": "date"
+                },
+                "DELIVERY_NOT_PICKED_UP": {
+                    "type": "date"
+                },
+                "DELIVERY_NOT_COMPLETED": {
+                    "type": "date"
+                },
+                "DELIVERY_SCHEDULED": {
+                    "type": "date"
+                },
+                "DELIVERY_AUTOMATION_EXECUTED_SUCCESS": {
+                    "type": "date"
+                },
+                "DELIVERY_COMPANY_BILL_REMOVED": {
+                    "type": "date"
+                },
+                "DELIVERY_DROPOFF_ADDRESS_UPDATED": {
+                    "type": "date"
+                },
+                "DELIVERY_IN_TRANSIT_STORAGE": {
+                    "type": "date"
+                },
+                "DELIVERY_BROADCASTED": {
+                    "type": "date"
+                },
+                "DELIVERY_NOTIFICATION_EXT_EMAIL_FAILED": {
+                    "type": "date"
+                },
+                "DELIVERY_NOTIFICATION_EXT_WHATSAPP_SENT": {
+                    "type": "date"
+                },
+                "DELIVERY_PICKUP_ADDRESS_UPDATED": {
+                    "type": "date"
+                },
+                "DELIVERY_SCHEDULED_PICK_TIME_UPDATED": {
+                    "type": "date"
+                },
+                "DELIVERY_FILE_ADDED": {
+                    "type": "date"
+                },
+                "DELIVERY_PICKED_UP": {
+                    "type": "date"
+                },
+                "DELIVERY_TYPE_CHANGED": {
+                    "type": "date"
+                },
+                "DELIVERY_DROPOFF_DUE_DATE_UPDATED": {
+                    "type": "date"
+                },
+                "DELIVERY_DRIVER_BILL_REMOVED": {
+                    "type": "date"
+                },
+                "DELIVERY_GOING_TO_PICKUP": {
+                    "type": "date"
+                },
+                "DELIVERY_CLIENT_FIX_ADDRESS": {
+                    "type": "date"
+                },
+                "DELIVERY_NOTIFICATION_EXT_SMS_OPENED": {
+                    "type": "date"
+                },
+                "DELIVERY_ARTIFICIAL_EVENT_UPDATED": {
+                    "type": "date"
+                },
+                "DELIVERY_SCHEDULED_DROP_TIME_UPDATED": {
+                    "type": "date"
+                },
+                "DELIVERY_CANCELED": {
+                    "type": "date"
+                },
+                "DELIVERY_PICKUP_DUE_DATE_UPDATED": {
+                    "type": "date"
+                },
+                "DELIVERY_ARTIFICIAL_EVENT_CREATED": {
+                    "type": "date"
+                },
+                "DELIVERY_CHAT_OPENED": {
+                    "type": "date"
+                },
+                "DELIVERY_REFERENCE_ID_UPDATED": {
+                    "type": "date"
+                },
+                "DELIVERY_TRACKING_PAGE_OPENED": {
+                    "type": "date"
+                },
+                "DELIVERY_LOCKED": {
+                    "type": "date"
+                },
+                "DELIVERY_NETWORK_CHANGED": {
+                    "type": "date"
+                },
+                "DELIVERY_SHIPPER_PAID_CREATED": {
+                    "type": "date"
+                },
+                "DELIVERY_DROPPED_OFF": {
+                    "type": "date"
+                },
+                "DELIVERY_HOLD_BY_COURIER": {
+                    "type": "date"
+                },
+                "DELIVERY_DELETED": {
+                    "type": "date"
+                },
+                "DELIVERY_CREATED_WITH_ERRORS": {
+                    "type": "date"
+                },
+                "DELIVERY_CLONED": {
+                    "type": "date"
+                },
+                "DELIVERY_DRIVER_BILL_CREATED": {
+                    "type": "date"
+                },
+                "DELIVERY_CREATED_SUCCESSFULLY": {
+                    "type": "date"
+                },
+                "DELIVERY_NOTIFICATION_EXT_EMAIL_OPENED": {
+                    "type": "date"
+                },
+                "DELIVERY_EXTRA_DATA_UPDATED": {
+                    "type": "date"
+                },
+                "DELIVERY_PACKAGE_ADDED": {
+                    "type": "date"
+                },
+                "DELIVERY_RETURN_CREATED": {
+                    "type": "date"
+                },
+                "DELIVERY_TOTAL_PACKAGE_PRICE_UPDATED": {
+                    "type": "date"
+                },
+                "DELIVERY_CONFIRMED_BY_SHIPPER": {
+                    "type": "date"
+                },
+                "DELIVERY_GOING_TO_DROPOFF": {
+                    "type": "date"
+                },
+                "DELIVERY_NOTIFICATION_SENT_FAILED": {
+                    "type": "date"
+                },
+                "DELIVERY_PRICE_CHANGED": {
+                    "type": "date"
+                },
+                "DELIVERY_RETURN_IN_TRANSIT": {
+                    "type": "date"
+                },
+                "ROUTE_ARTIFICIAL_EVENT_UPDATED": {
+                    "type": "date"
+                },
+                "DELIVERY_AT_DROPOFF": {
+                    "type": "date"
+                },
+                "DELIVERY_NOTIFICATION_EXT_SMS_SENT": {
+                    "type": "date"
+                },
+                "DELIVERY_IN_TRANSIT": {
+                    "type": "date"
+                },
+                "DELIVERY_PROCESSING": {
+                    "type": "date"
+                },
+                "DELIVERY_RETURNED": {
+                    "type": "date"
+                },
+                "DELIVERY_COMPLETED": {
+                    "type": "date"
+                },
+                "DELIVERY_NOT_PICKED_UP_PAYABLE": {
+                    "type": "date"
+                },
+                "DELIVERY_PACKAGE_UPDATED": {
+                    "type": "date"
+                },
+                "DELIVERY_CLIENT_ADDRESS_REUSED": {
+                    "type": "date"
+                }
+            }
+        },
+        "incidences": {
+            "type": "nested",
+            "properties": {
+                "eventCreatedAt": {
+                    "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss||yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+                    "type": "date"
+                },
+                "level": {
+                    "type": "keyword"
+                },
+                "author": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "text"
+                        },
+                        "phonenumber": {
+                            "type": "text"
+                        },
+                        "email": {
+                            "type": "text"
+                        }
+                    }
+                },
+                "cityId": {
+                    "type": "long"
+                },
+                "eventType": {
+                    "type": "keyword"
+                },
+                "incidenceId": {
+                    "type": "long"
+                },
+                "type": {
+                    "type": "keyword"
+                },
+                "createdAt": {
+                    "type": "date"
+                },
+                "companyId": {
+                    "type": "long"
+                },
+                "deliveryId": {
+                    "type": "keyword"
+                },
+                "eventEntity": {
+                    "type": "keyword"
+                },
+                "scope": {
+                    "type": "object",
+                    "properties": {
+                        "shipper": {
+                            "type": "boolean"
+                        },
+                        "client": {
+                            "type": "boolean"
+                        },
+                        "company": {
+                            "type": "boolean"
+                        }
+                    }
+                },
+                "eventDescription": {
+                    "type": "text"
+                },
+                "comment": {
+                    "type": "text"
+                },
+                "state": {
+                    "type": "keyword"
+                },
+                "eventAuthor": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "text"
+                        },
+                        "email": {
+                            "type": "text"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

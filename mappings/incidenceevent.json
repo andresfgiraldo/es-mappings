@@ -1,0 +1,151 @@
+{
+    "dynamic_templates": [],
+    "properties": {
+        "eventPayload": {
+            "type": "object",
+            "properties": {
+                "incidence": {
+                    "type": "object",
+                    "properties": {
+                        "metadata": {
+                            "type": "object",
+                            "properties": {
+                                "file": {
+                                    "type": "text"
+                                },
+                                "oldLocation": {
+                                    "type": "object",
+                                    "properties": {
+                                        "instructions": {
+                                            "type": "text"
+                                        },
+                                        "address": {
+                                            "type": "text"
+                                        },
+                                        "originalAddress": {
+                                            "type": "text"
+                                        },
+                                        "location": {
+                                            "type": "geo_point"
+                                        }
+                                    }
+                                },
+                                "gap": {
+                                    "type": "double"
+                                },
+                                "oldRecipient": {
+                                    "type": "object",
+                                    "properties": {
+                                        "name": {
+                                            "type": "text"
+                                        },
+                                        "phonenumber": {
+                                            "type": "text"
+                                        },
+                                        "email": {
+                                            "type": "text"
+                                        }
+                                    }
+                                },
+                                "newLocation": {
+                                    "type": "object",
+                                    "properties": {
+                                        "instructions": {
+                                            "type": "text"
+                                        },
+                                        "address": {
+                                            "type": "text"
+                                        },
+                                        "originalAddress": {
+                                            "type": "text"
+                                        },
+                                        "location": {
+                                            "type": "geo_point"
+                                        }
+                                    }
+                                },
+                                "newRecipient": {
+                                    "type": "object",
+                                    "properties": {
+                                        "name": {
+                                            "type": "text"
+                                        },
+                                        "phonenumber": {
+                                            "type": "text"
+                                        },
+                                        "email": {
+                                            "type": "text"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "level": {
+                            "type": "keyword"
+                        },
+                        "author": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "text"
+                                },
+                                "phonenumber": {
+                                    "type": "text"
+                                },
+                                "email": {
+                                    "type": "text"
+                                }
+                            }
+                        },
+                        "scope": {
+                            "type": "object",
+                            "properties": {
+                                "shipper": {
+                                    "type": "boolean"
+                                },
+                                "client": {
+                                    "type": "boolean"
+                                },
+                                "company": {
+                                    "type": "boolean"
+                                }
+                            }
+                        },
+                        "solvedBy": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "text"
+                                },
+                                "id": {
+                                    "type": "keyword"
+                                },
+                                "type": {
+                                    "type": "keyword"
+                                },
+                                "email": {
+                                    "type": "text"
+                                }
+                            }
+                        },
+                        "comment": {
+                            "type": "text"
+                        },
+                        "id": {
+                            "type": "keyword"
+                        },
+                        "state": {
+                            "type": "keyword"
+                        },
+                        "creationDate": {
+                            "type": "date"
+                        },
+                        "type": {
+                            "type": "keyword"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

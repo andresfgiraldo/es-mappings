@@ -1,0 +1,656 @@
+{
+    "_routing": {
+        "required": false
+    },
+    "numeric_detection": false,
+    "dynamic_date_formats": [
+        "strict_date_optional_time",
+        "yyyy/MM/dd HH:mm:ss Z||yyyy/MM/dd Z"
+    ],
+    "dynamic": true,
+    "_source": {
+        "excludes": [],
+        "includes": [],
+        "enabled": true
+    },
+    "dynamic_templates": [],
+    "date_detection": true,
+    "properties": {
+        "arrivalDeliveryDate": {
+            "type": "date"
+        },
+        "insurance": {
+            "type": "double"
+        },
+        "notes": {
+            "type": "text"
+        },
+        "references": {
+            "type": "object",
+            "properties": {
+                "dropoffCity": {
+                    "type": "keyword"
+                },
+                "groupId": {
+                    "type": "keyword"
+                },
+                "warehouseLocationId": {
+                    "type": "keyword"
+                }
+            }
+        },
+        "extraData": {
+            "type": "nested",
+            "properties": {
+                "name": {
+                    "type": "keyword"
+                },
+                "content": {
+                    "type": "keyword"
+                },
+                "searchable": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "companyName": {
+            "type": "text"
+        },
+        "dueDate": {
+            "type": "date"
+        },
+        "networkName": {
+            "type": "text"
+        },
+        "cityId": {
+            "type": "keyword"
+        },
+        "distanceRoute": {
+            "type": "double"
+        },
+        "type": {
+            "type": "keyword"
+        },
+        "deliveryDueDate": {
+            "type": "date"
+        },
+        "droppingPlace": {
+            "type": "object",
+            "properties": {
+                "instructions": {
+                    "type": "text"
+                },
+                "address": {
+                    "type": "text"
+                },
+                "originalAddress": {
+                    "type": "text"
+                },
+                "location": {
+                    "type": "geo_point"
+                }
+            }
+        },
+        "scheduledStartPickingDate": {
+            "type": "date"
+        },
+        "deliveryId": {
+            "type": "keyword"
+        },
+        "price": {
+            "type": "double"
+        },
+        "scheduledEndPickingDate": {
+            "type": "date"
+        },
+        "eventDescription": {
+            "type": "text"
+        },
+        "networkId": {
+            "type": "keyword"
+        },
+        "state": {
+            "type": "keyword"
+        },
+        "cash": {
+            "type": "double"
+        },
+        "shipperEmail": {
+            "type": "text"
+        },
+        "attempts": {
+            "type": "long"
+        },
+        "eventId": {
+            "type": "keyword"
+        },
+        "offset": {
+            "type": "keyword"
+        },
+        "removedRouteId": {
+            "type": "keyword"
+        },
+        "eventPayload": {
+            "type": "object",
+            "properties": {
+                "artificial": {
+                    "type": "object",
+                    "properties": {
+                        "originalEventId": {
+                            "type": "keyword"
+                        },
+                        "artificialEntityId": {
+                            "type": "keyword"
+                        },
+                        "artificialEventId": {
+                            "type": "keyword"
+                        },
+                        "originalEventType": {
+                            "type": "keyword"
+                        },
+                        "artificialCreatedAt": {
+                            "type": "date"
+                        }
+                    }
+                },
+                "automation": {
+                    "type": "object",
+                    "properties": {
+                        "automationId": {
+                            "type": "keyword"
+                        },
+                        "automationName": {
+                            "type": "keyword"
+                        },
+                        "automationStatus": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+                "file": {
+                    "type": "object",
+                    "properties": {
+                        "extension": {
+                            "type": "keyword"
+                        },
+                        "name": {
+                            "type": "text"
+                        },
+                        "id": {
+                            "type": "keyword"
+                        },
+                        "creationDate": {
+                            "type": "date"
+                        },
+                        "type": {
+                            "type": "keyword"
+                        },
+                        "url": {
+                            "type": "text"
+                        },
+                        "tags": {
+                            "type": "text"
+                        }
+                    }
+                },
+                "route": {
+                    "type": "object",
+                    "properties": {
+                        "removedRouteId": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+                "fee": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "text"
+                        },
+                        "finalPrice": {
+                            "type": "double"
+                        },
+                        "id": {
+                            "type": "keyword"
+                        },
+                        "creationDate": {
+                            "type": "date"
+                        },
+                        "type": {
+                            "type": "keyword"
+                        },
+                        "value": {
+                            "type": "double"
+                        }
+                    }
+                },
+                "routeRejection": {
+                    "type": "object",
+                    "properties": {
+                        "driverId": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+                "shipperBill": {
+                    "type": "object",
+                    "properties": {
+                        "date": {
+                            "type": "date"
+                        },
+                        "amount": {
+                            "type": "double"
+                        },
+                        "billId": {
+                            "type": "keyword"
+                        },
+                        "id": {
+                            "type": "keyword"
+                        },
+                        "status": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+                "companyBill": {
+                    "type": "object",
+                    "properties": {
+                        "date": {
+                            "type": "date"
+                        },
+                        "companyId": {
+                            "type": "keyword"
+                        },
+                        "period": {
+                            "type": "keyword"
+                        },
+                        "total": {
+                            "type": "double"
+                        },
+                        "endDate": {
+                            "type": "date"
+                        },
+                        "id": {
+                            "type": "keyword"
+                        },
+                        "startDate": {
+                            "type": "date"
+                        },
+                        "status": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+                "tags": {
+                    "type": "object",
+                    "properties": {
+                        "removed": {
+                            "type": "nested",
+                            "properties": {
+                                "color": {
+                                    "type": "keyword"
+                                },
+                                "name": {
+                                    "type": "text"
+                                },
+                                "description": {
+                                    "type": "text"
+                                },
+                                "company": {
+                                    "type": "keyword"
+                                },
+                                "id": {
+                                    "type": "keyword"
+                                }
+                            }
+                        },
+                        "added": {
+                            "type": "nested",
+                            "properties": {
+                                "color": {
+                                    "type": "keyword"
+                                },
+                                "name": {
+                                    "type": "text"
+                                },
+                                "description": {
+                                    "type": "text"
+                                },
+                                "company": {
+                                    "type": "keyword"
+                                },
+                                "id": {
+                                    "type": "keyword"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "shipperName": {
+            "type": "text"
+        },
+        "distanceCharged": {
+            "type": "double"
+        },
+        "eventType": {
+            "type": "keyword"
+        },
+        "creationDate": {
+            "type": "date"
+        },
+        "tags": {
+            "type": "nested",
+            "properties": {
+                "color": {
+                    "type": "keyword"
+                },
+                "name": {
+                    "type": "text"
+                },
+                "description": {
+                    "type": "text"
+                },
+                "company": {
+                    "type": "keyword"
+                },
+                "id": {
+                    "type": "keyword"
+                },
+                "keyword": {
+                    "type": "keyword"
+                }
+            }
+        },
+        "itemsPrice": {
+            "type": "double"
+        },
+        "formulaId": {
+            "type": "keyword"
+        },
+        "jobId": {
+            "type": "keyword"
+        },
+        "companyId": {
+            "type": "keyword"
+        },
+        "size": {
+            "type": "long"
+        },
+        "courier": {
+            "type": "object",
+            "properties": {
+                "method": {
+                    "eager_global_ordinals": false,
+                    "index_phrases": false,
+                    "fielddata": false,
+                    "norms": true,
+                    "index": true,
+                    "store": false,
+                    "type": "text",
+                    "index_options": "positions"
+                },
+                "author": {
+                    "dynamic": true,
+                    "type": "object",
+                    "enabled": true,
+                    "properties": {
+                        "name": {
+                            "type": "text"
+                        },
+                        "id": {
+                            "type": "keyword"
+                        },
+                        "type": {
+                            "type": "text"
+                        },
+                        "email": {
+                            "type": "text"
+                        }
+                    }
+                },
+                "lon": {
+                    "type": "float"
+                },
+                "lat": {
+                    "type": "float"
+                },
+                "timestamp": {
+                    "type": "date"
+                }
+            }
+        },
+        "eventEntity": {
+            "type": "keyword"
+        },
+        "itemsNumber": {
+            "type": "long"
+        },
+        "cityLang": {
+            "type": "keyword"
+        },
+        "routeRejection": {
+            "type": "object",
+            "properties": {
+                "driverId": {
+                    "type": "keyword"
+                }
+            }
+        },
+        "countryName": {
+            "type": "text"
+        },
+        "recipientInfo": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "text"
+                },
+                "phonenumber": {
+                    "type": "text"
+                },
+                "email": {
+                    "type": "text"
+                }
+            }
+        },
+        "items": {
+            "type": "nested",
+            "properties": {
+                "size": {
+                    "type": "long"
+                },
+                "price": {
+                    "type": "double"
+                },
+                "qty": {
+                    "type": "long"
+                },
+                "name": {
+                    "type": "text"
+                },
+                "weight": {
+                    "type": "long"
+                },
+                "delivered": {
+                    "type": "boolean"
+                },
+                "fragile": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "keyword"
+                },
+                "pickedUp": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "pickupDueDate": {
+            "type": "date"
+        },
+        "status": {
+            "type": "keyword"
+        },
+        "shipperId": {
+            "type": "keyword"
+        },
+        "distance": {
+            "type": "double"
+        },
+        "courierDocumentId": {
+            "type": "keyword"
+        },
+        "statusUpdateDate": {
+            "type": "date"
+        },
+        "pickingPlace": {
+            "type": "object",
+            "properties": {
+                "instructions": {
+                    "type": "text"
+                },
+                "address": {
+                    "type": "text"
+                },
+                "originalAddress": {
+                    "type": "text"
+                },
+                "location": {
+                    "type": "geo_point"
+                }
+            }
+        },
+        "referenceId": {
+            "type": "keyword"
+        },
+        "itemsWeight": {
+            "type": "double"
+        },
+        "routeId": {
+            "type": "keyword"
+        },
+        "blocked": {
+            "type": "boolean"
+        },
+        "cityName": {
+            "type": "text"
+        },
+        "countryCode": {
+            "type": "keyword"
+        },
+        "arrivalPickupDate": {
+            "type": "date"
+        },
+        "routeCapacity": {
+            "type": "long"
+        },
+        "effectivePickupDate": {
+            "type": "date"
+        },
+        "eventTimestamp": {
+            "type": "date"
+        },
+        "cost": {
+            "type": "double"
+        },
+        "companyType": {
+            "type": "keyword"
+        },
+        "scheduledEndDeliveryDate": {
+            "type": "date"
+        },
+        "effectiveDeliveryDate": {
+            "type": "date"
+        },
+        "scheduledStartDeliveryDate": {
+            "type": "date"
+        },
+        "companyMode": {
+            "type": "keyword"
+        },
+        "companyPlanType": {
+            "type": "keyword"
+        },
+        "vehicleCapacity": {
+            "type": "long"
+        },
+        "isArtificialEvent": {
+            "type": "keyword"
+        },
+        "senderInfo": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "text"
+                },
+                "phonenumber": {
+                    "type": "text"
+                },
+                "email": {
+                    "type": "text"
+                }
+            }
+        },
+        "companyParentId": {
+            "type": "keyword"
+        },
+        "currencyCode": {
+            "type": "keyword"
+        },
+        "eventAuthor": {
+            "type": "object",
+            "properties": {
+                "method": {
+                    "type": "text"
+                },
+                "name": {
+                    "type": "text",
+                    "fields": {
+                        "keyword": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+                "location": {
+                    "type": "object",
+                    "properties": {
+                        "problem": {
+                            "type": "text"
+                        },
+                        "latitude": {
+                            "type": "float"
+                        },
+                        "accuracy": {
+                            "type": "float"
+                        },
+                        "longitude": {
+                            "type": "float"
+                        },
+                        "timestamp": {
+                            "type": "date"
+                        }
+                    }
+                },
+                "id": {
+                    "type": "keyword"
+                },
+                "type": {
+                    "type": "keyword"
+                },
+                "email": {
+                    "type": "text",
+                    "fields": {
+                        "keyword": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+                "timestamp": {
+                    "type": "date"
+                }
+            }
+        }
+    }
+}
